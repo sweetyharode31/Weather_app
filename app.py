@@ -27,13 +27,7 @@ if st.button("Fetch Weather Data"):
 
         name = data["name"]
         country = data["sys"]["country"]
-        st.subheader(f"Weather data for {name},{country}")
-        # Fetch data in variables
-        
-        st.metric("temperature",f"{data["main"]["temp"]}")
-        st.metric("Feels_like : ",f"{data['main']['feels_like']}")
-        st.metric("Humidity : ",f"{data['main']['humidity']}")
-        st.metric("Wind Speed : ",f"{data['wind']['speed']}")
+        st.subheader(f"Weather data for {name},{country}")        
 
         temperature = data["main"]["temp"]
         humidity = data['main']['humidity']
@@ -42,10 +36,10 @@ if st.button("Fetch Weather Data"):
 
         col1, col2, col3, col4 = st.columns(4)
 
-        col1.metric("Temperature",f"🌡{"temperature"}°C")
-        col2.metric("Humidity",f"💧{"humidity"}%")
-        col3.metric("Wind speed",f"🍃{"wind_speed"}m/s")
-        col4.metric("Weather Condition",f"☀️{"weather"}")
+        col1.metric("🌡Temperature",f"{"temperature"}°C")
+        col2.metric("💧Humidity",f"{"humidity"}%")
+        col3.metric("🍃Wind speed",f"{"wind_speed"}m/s")
+        col4.metric("⛅Weather Condition",f"{"weather"}")
 
     else:
         st.error("Invalid city name")
